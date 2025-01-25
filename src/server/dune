@@ -19,7 +19,3 @@
    %{target}
    (run ./utils/GenerateRootTemplate.exe %{deps}))))
 
-(executable
- (name GenerateRootTemplate)
- (modules GenerateRootTemplate)
- (libraries str))
