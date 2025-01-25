@@ -1,0 +1,12 @@
+(version 1.1.2)
+
+(build
+ (run dune build -p %{pkg-self:name} -j %{jobs}))
+
+(depends dune ocaml reason result)
+
+(source
+ (fetch
+  (url https://github.com/aantron/promise/archive/1.1.2.tar.gz)
+  (checksum
+   sha256=d02cc959c0e49903b25303a8f433bdbb32b1b0e63b048a7d81b21c515dc2755b)))

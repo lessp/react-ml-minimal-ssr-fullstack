@@ -1,0 +1,25 @@
+type state = int
+
+type action =
+  | Increment
+  | Decrement
+
+let reducer state action =
+  match action with
+  | Increment -> state + 1
+  | Decrement -> state - 1
+;;
+
+let[@react.component] make ?(initialCount = 0) = 
+  let state, dispatch = React.useReducer reducer initialCount in
+
+  <div className="flex gap-4 items-center">
+    <Button onClick=(fun _ -> dispatch Increment)>
+      (React.string "Increment")
+    </Button>
+    <h1> (React.string @@ "Counter: " ^ (string_of_int state)) </h1>
+    <Button onClick=(fun _ -> dispatch Decrement)>
+      (React.string "Decrement")
+    </Button>
+  </div>
+;;

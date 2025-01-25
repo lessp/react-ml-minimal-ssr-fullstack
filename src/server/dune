@@ -1,0 +1,25 @@
+(include_subdirs unqualified)
+
+(executable
+ (name Main)
+ (libraries 
+   dream 
+   shared_native 
+   server-reason-react.react
+   server-reason-react.reactDom)
+ (preprocess
+  (pps server-reason-react.ppx)))
+
+;; Generate the root template from '/dist/index.html'
+(rule
+ (target Template.ml)
+ (deps ../../dist/index.html)
+ (action
+  (with-stdout-to
+   %{target}
+   (run ./utils/GenerateRootTemplate.exe %{deps}))))
+
+(executable
+ (name GenerateRootTemplate)
+ (modules GenerateRootTemplate)
+ (libraries str))

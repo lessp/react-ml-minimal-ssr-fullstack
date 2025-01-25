@@ -1,0 +1,28 @@
+(version 0.3.1)
+
+(build
+ (progn
+  (when
+   %{pkg-self:dev}
+   (run dune subst))
+  (run dune build -p %{pkg-self:name} -j %{jobs} @install)))
+
+(depends
+ dune
+ ocaml
+ reason
+ melange
+ ppxlib
+ quickjs
+ promise
+ lwt
+ lwt_ppx
+ uri
+ integers)
+
+(source
+ (fetch
+  (url
+   https://github.com/ml-in-barcelona/server-reason-react/releases/download/0.3.1/server-reason-react-0.3.1.tbz)
+  (checksum
+   sha256=b97fbe6a7c3e5e1a7775e0f6498f257acaaa7e272177a9a3e0e50b7a49408d7c)))

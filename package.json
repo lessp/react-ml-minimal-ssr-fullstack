@@ -1,0 +1,22 @@
+{
+  "name": "react-ml-ssr",
+  "module": "public/index.html",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:dev": "vite build --mode development",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "vite": "^6.0.7",
+    "@types/bun": "latest"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0"
+  }
+}

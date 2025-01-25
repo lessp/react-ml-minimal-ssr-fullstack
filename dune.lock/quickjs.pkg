@@ -1,0 +1,17 @@
+(version 0.1.2)
+
+(build
+ (progn
+  (when
+   %{pkg-self:dev}
+   (run dune subst))
+  (run dune build -p %{pkg-self:name} -j %{jobs} @install)))
+
+(depends dune ocaml integers ctypes)
+
+(source
+ (fetch
+  (url
+   https://github.com/ml-in-barcelona/quickjs.ml/releases/download/0.1.2/quickjs-0.1.2.tbz)
+  (checksum
+   sha256=27f6c8c9a3a7afa3ab7506d1154f22cf41249e2b789c0c6c634982809d17ad57)))

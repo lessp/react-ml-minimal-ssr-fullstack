@@ -1,0 +1,6 @@
+let () =
+  match ReactDOM.querySelector "#root" with
+  | Some root ->
+    ignore @@ ReactDOM.Client.hydrateRoot root <App />
+  | None -> ()
+;;
