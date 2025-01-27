@@ -6,7 +6,7 @@ A minimal server-side rendering (SSR) and client-side hydration setup using OCam
 
 1. `public/index.html` contains our base template with static assets
 2. Vite bundles this into `dist/index.html` with processed assets
-3. `GenerateRootTemplate.ml` takes `dist/index.html` and creates a template function that preserves all assets while enabling SSR:
+3. `GenerateRootTemplate.ml` takes `dist/index.html` and creates a template function that preserves all assets:
    ```ocaml
    let render content = "..." ^ content ^ "..."
    ```
